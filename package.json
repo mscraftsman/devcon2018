@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "description": "Developers Conference 2018 Official Website",
   "contributors": [
-    { 
+    {
       "name": "Tejas (Nirvan) Pagooah",
       "email": "tejas@pagooah.com",
       "url": "http://nirvan.pagooah.com"
     },
-    { 
+    {
       "name": "Sandeep Ramgolam",
       "email": "sandeep@lsl.digital",
       "url": "https://barfii.net"
     },
-    { 
+    {
       "name": "Jochen Kirstätter",
       "email": "joki@ios.mu",
       "url": "https://jochen.kirstaetter.name/"
@@ -38,6 +38,7 @@
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
     "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^6.0.6",
+    "vue-no-ssr": "^0.2.2"
   }
 }
