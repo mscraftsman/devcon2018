@@ -30,27 +30,27 @@ export default {
         },
         {
           name: 'Sessions',
-          url: '/sessions'
+          url: '/'
         },
         {
           name: 'Speakers',
-          url: '/speakers'
+          url: '/'
         },
         {
           name: 'Extras',
-          url: '/extras'
+          url: '/'
         },
         {
           name: 'Hackathon',
-          url: '/hackathon'
+          url: '/'
         },
         {
           name: 'Sponsors',
-          url: '/sponsors'
+          url: '/'
         },
         {
           name: 'Contact',
-          url: '/contact'
+          url: '/'
         }
       ]
     }
