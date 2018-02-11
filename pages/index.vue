@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="description-wrapper">
-          The largest tech conference in Mauritius!
+          The biggest tech event in Mauritius!
         </div>
         <div class="timer-wrapper">
           <div class="timer">
@@ -25,7 +25,7 @@
         </div>
 
         <div class="footer-text-wrapper">
-          <h3>17 - 18 May — Voila Hotel & Flying Dodo, Bagatelle</h3>
+          <h3>17 - 19 May — Voila Hotel & Flying Dodo, Bagatelle</h3>
         </div>
       </div>
     </section>
