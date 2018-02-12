@@ -124,4 +124,52 @@
     }
   }
 
+  @media (max-width: $tablet) {
+    .description-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+
+      .content-wrapper {
+        grid-column: 1 / 1;
+        grid-row: 1 / 2;
+      }
+
+      .image-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        height: 500px;
+        clip-path: initial;
+      }
+    }
+
+    .section-title-wrapper {
+      h2 {
+        font-size: 45px;
+        line-height: 50px;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .description-container {
+      .image-wrapper {
+        height: 300px;
+      }
+    }
+
+    .section-title-wrapper {
+      h2 {
+        font-size: 35px;
+        line-height: 40px;
+      }
+    }
+
+    .section-description-wrapper {
+      p {
+        font-size: 17px;
+      }
+    }
+
+  }
+
 </style>
