@@ -188,6 +188,7 @@ export default {
         transform: skewX(15deg) scaleX(0.95);
         border: 0;
         outline: none;
+        padding-left: calc(var(--gutter));
       }
     }
 
