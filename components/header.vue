@@ -80,6 +80,7 @@ export default {
     &.fixed {
       position: fixed;
       top: 0px;
+      z-index: 100;
     }
   }
 
