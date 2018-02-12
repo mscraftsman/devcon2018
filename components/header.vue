@@ -6,10 +6,13 @@
           <img src="~/assets/images/logo.svg" alt="MSCC Logo" class="logo-svg">
         </nuxt-link>
       </div>
-      <div class="menu-wrapper">
+      <div class="menu-wrapper" :class="openState">
         <ul class="menu-items">
           <li class="menu-item" :key="index" v-for="(item, index) in menuItems"><nuxt-link :to="item.url">{{item.name}}</nuxt-link></li>
         </ul>
+      </div>
+      <div class="menu-button">
+        <button type="button" @click="openMenu">Menu</button>
       </div>
       <div class="register-button">
         <nuxt-link to="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">
@@ -52,13 +55,18 @@ export default {
           name: 'Contact',
           url: '/'
         }
-      ]
+      ],
+      openState: null
+    }
+  },
+  methods: {
+    openMenu () {
+      this.openState = (this.openState === null) ? 'opened' : null
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-
 
   $tablet: 1024px;
   $tablet-portrait: 768px;
@@ -71,34 +79,35 @@ export default {
 
     &.fixed {
       position: fixed;
-      top: 0px;   
+      top: 0px;
     }
   }
 
   .main-header {
+    --height: 80px;
+
     width: 100%;
     display: grid;
-    height: 80px;
+    height: var(--height);
     grid-column: full;
     grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 1;
     align-items: center;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 
     .logo-wrapper {
       grid-column: 1 / 2;
-      height: 80px;
+      height: var(--height);
       background: linear-gradient(135deg, rgba(49,232,183, 1), rgba(40,71,217, 1));
       display: grid;
       align-items: center;
       justify-content: center;
       transform: skewX(-15deg) scaleX(1.1);
-      
+
 
       a {
         display: block;
         height: 60px;
-        transform: skewX(15deg) scaleX(0.95);
+        transform: skewX(15deg) scaleX(1);
 
         img {
           height: 60px;
@@ -109,14 +118,17 @@ export default {
     .menu-wrapper {
       grid-column: 2 / 3;
       text-align: right;
-      height: 80px;
+      height: var(--height);
       background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      
+      transform: skewX(-15deg);
+
 
       .menu-items {
+        transform: skewX(15deg);
+
         &, .menu-item {
           display: inline-block;
           margin: 0;
@@ -124,14 +136,14 @@ export default {
           list-style-type: none;
           align-self: center;
         }
-        
+
         .menu-item {
           font-size: 23px;
 
           &:after {
             content: '/';
             padding: 0 calc(var(--gutter) / 1);
-            font-family: var(--font-shentox);            
+            font-family: var(--font-shentox);
             color: #ccc;
           }
 
@@ -155,11 +167,35 @@ export default {
       }
     }
 
+    .menu-button {
+      display: none;
+      transform: skewX(-15deg) scaleX(1.1);
+
+      button {
+        color: var(--color-white);
+        background: var(--color-green);
+        font-family: var(--font-shentox);
+        text-transform: uppercase;
+        font-weight: 400;
+        text-decoration: none;
+        font-size: 20px;
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: var(--height);
+        transform: skewX(15deg) scaleX(0.95);
+        border: 0;
+        outline: none;
+      }
+    }
+
     .register-button {
       grid-column: 3 / 4;
       background: var(--color-blue);
       transform: skewX(-15deg) scaleX(1.1);
-      
+
       a {
         color: var(--color-white);
         font-family: var(--font-shentox);
@@ -172,10 +208,117 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 80px;
+        height: var(--height);
         transform: skewX(15deg) scaleX(0.95);
-        
       }
     }
+  }
+
+  @media (max-width: 1500px) {
+    .main-header {
+      --height: 70px;
+
+      .logo-wrapper {
+        a {
+          height: 50px;
+
+          img {
+            height: 50px;
+          }
+        }
+      }
+
+      .menu-wrapper {
+        .menu-items {
+          .menu-item {
+            font-size: 18px;
+
+            &:after {
+              padding: 0 calc(var(--gutter) / 2);
+            }
+          }
+        }
+      }
+      .register-button {
+        a {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .main-header {
+      --height: 60px;
+      grid-template-columns: 0.5fr 1fr 0.5fr;
+      grid-template-rows: 60px minmax(60px, 1fr);
+
+      .logo-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+        a {
+          height: 40px;
+
+          img {
+            height: 40px;
+          }
+        }
+      }
+
+      .menu-button {
+        display: block;
+        grid-row: 1 / 2;
+      }
+
+      .menu-wrapper {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        transform: skew(0deg) scaleX(1);
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        top: 0;
+
+        &.opened {
+          height: auto;
+        }
+
+        .menu-items {
+          transform: skew(0deg) scaleX(1);
+          display: block;
+          width: 100%;
+          text-align: center;
+
+          .menu-item {
+            font-size: 18px;
+            display: block;
+            border-bottom: 1px solid #cccccc;
+            width: 100%;
+
+            a {
+              padding: calc(var(--gutter) / 2);
+              width: 100%;
+              display: block;
+            }
+
+            &:after {
+              content: none;
+              padding: 0;
+            }
+          }
+        }
+      }
+      .register-button {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+
+        a {
+          font-size: 18px;
+        }
+      }
+    }
+
   }
 </style>

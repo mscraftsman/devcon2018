@@ -7,7 +7,7 @@
           <!-- <img src="~/assets/images/logo.svg" alt="MSCC Logo" class="logo-svg"> -->
           <h1 class="title">Developers Conference</h1>
           <div class="year-wrapper">
-            2018
+            <span>2018</span>
           </div>
         </div>
         <div class="description-wrapper">
@@ -20,7 +20,7 @@
             </no-ssr>
           </div>
           <div class="register">
-            <nuxt-link to="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">Register</nuxt-link> 
+            <nuxt-link to="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">Register</nuxt-link>
           </div>
         </div>
 
@@ -34,7 +34,7 @@
 
 <script>
 /*
-  * tejas@pagooah.com 
+  * tejas@pagooah.com
 */
 
 import headerSection from '~/components/header.vue'
@@ -49,7 +49,7 @@ export default {
   },
   data () {
     return {
-      
+
     }
   },
   methods: {
@@ -78,7 +78,7 @@ export default {
 
 $tablet: 1024px;
 $tablet-portrait: 768px;
-$mobiie: 540px;
+$mobile: 540px;
 
 .full-section-container {
   display: grid;
@@ -107,17 +107,13 @@ $mobiie: 540px;
   background-position: center center;
   height: 100vh;
 
-  // animation-name: home;
-  // animation-timing-function: ease-in-out;
-  // animation-iteration-count: infinite;
-  // animation-duration: 5s;
-
   .logo-container {
-    grid-column: container;    
+    grid-column: container;
     display: grid;
     grid-auto-rows: auto;
     height: calc( 100vh - 80px);
     margin-top: 80px;
+    padding: calc(var(--gutter) / 2);
 
     .logo-wrapper {
       text-align: left;
@@ -145,17 +141,22 @@ $mobiie: 540px;
 
       .year-wrapper {
         display: inline-flex;
+        align-items: center;
+        justify-content: center;
         font-family: var(--font-shentox);
         text-transform: uppercase;
         color: var(--color-white);
         font-size: 50px;
-        line-height: 30px;
-        padding: 21px 15px 16px 15px;
-        height: 68px;
+        padding: calc(var(--gutter) / 1.5);
+        height: 70px;
         font-weight: 700;
         background: linear-gradient(135deg, rgba(49,232,183, 1) 0%, rgba(40,71,217, 1) 100%);
         border-radius: 5px;
         box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+
+        span {
+          height: 50px;
+        }
       }
     }
 
@@ -183,7 +184,7 @@ $mobiie: 540px;
         justify-self: start;
         width: 100%;
 
-        
+
         a {
           height: 70px;
           background: var(--color-blue);
@@ -224,29 +225,136 @@ $mobiie: 540px;
 }
 
 
-@media (max-width: $tablet-portrait) {
+@media (max-width: 1500px) {
   .main {
     .logo-container {
       .logo-wrapper {
-        .logo-svg {
-          max-height: 140px;
-        }
         .title {
-          font-size: 50px;
+          font-size: 30px;
         }
         .year-wrapper {
-          font-size: 50px;
-          line-height: 30px;
-          padding-top: calc(var(--gutter) + 5px);
+          font-size: 40px;
+          height: 60px;
+
+          span {
+            height: 40px;
+          }
         }
       }
+      .description-wrapper {
+        font-size: 80px;
+        letter-spacing: -1px;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .main {
+    .logo-container {
+      .logo-wrapper {
+        justify-content: center;
+      }
+      .description-wrapper {
+        font-size: 80px;
+        text-align: center;
+      }
+
+      .timer-wrapper {
+        .register a {
+          font-size: 24px;
+        }
+      }
+
       .footer-text-wrapper {
         h3 {
-          font-size: 25px;
+          font-size: 24px;
         }
       }
     }
   }
 }
 
+@media (max-width: $tablet-portrait) {
+  .main {
+    .logo-container {
+      .description-wrapper {
+        font-size: 60px;
+      }
+
+      .timer-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+
+        .timer {
+          grid-row: 1 / 2;
+          grid-column: 1 / 2;
+          justify-self: center;
+        }
+
+        .register {
+          grid-row: 2 / 3;
+          grid-column: 1 / 2;
+
+          a {
+            font-size: 24px;
+            width: 100%;
+          }
+
+        }
+      }
+
+      .footer-text-wrapper {
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: $mobile) {
+  .main {
+    .logo-container {
+
+      .logo-wrapper {
+        flex-direction: column;
+
+        .title {
+          font-size: 25px;
+          line-height: 50px;
+          margin-right: 0;
+        }
+
+        .year-wrapper {
+          font-size: 30px;
+          height: 50px;
+
+          span {
+            height: 30px;
+          }
+        }
+      }
+
+      .description-wrapper {
+        font-size: 36px;
+      }
+
+      .timer-wrapper {
+        .register {
+          a {
+            font-size: 24px;
+          }
+        }
+      }
+
+      .footer-text-wrapper {
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
 </style>

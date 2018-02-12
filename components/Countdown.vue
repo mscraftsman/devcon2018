@@ -69,6 +69,11 @@ export default {
 }
 </script>
 <style lang="scss">
+
+$tablet: 1024px;
+$tablet-portrait: 768px;
+$mobile: 540px;
+
 .vue-countdown {
   padding: 0;
   margin: 0;
@@ -109,5 +114,17 @@ export default {
   margin-bottom: 0;
   font-size: 18px;
   font-family: var(--font-shentox);
+}
+
+@media (max-width: $tablet) {
+  .vue-countdown .digit {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .vue-countdown .digit {
+    font-size: 40px;
+  }
 }
 </style>
