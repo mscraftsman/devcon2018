@@ -12,7 +12,7 @@
         </ul>
       </div>
       <div class="register-button">
-        <nuxt-link to="/">
+        <nuxt-link to="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">
           <span>Register</span>
         </nuxt-link>
       </div>

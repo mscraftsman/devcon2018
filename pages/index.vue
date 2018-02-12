@@ -20,7 +20,7 @@
             </no-ssr>
           </div>
           <div class="register">
-            <nuxt-link to="/">Register</nuxt-link> 
+            <nuxt-link to="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">Register</nuxt-link> 
           </div>
         </div>
 
