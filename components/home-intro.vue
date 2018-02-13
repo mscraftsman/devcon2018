@@ -7,12 +7,12 @@
       <div class="content-wrapper">
         <div class="section-title-wrapper white-title">
           <small>What's up for 2018?</small>
-          <h2>Some amazing title goes here!</h2>
+          <h2>Innovation. Technology. Community.</h2>
         </div>
         <div class="section-description-wrapper">
           <p>After the success of previous years the Mauritius Software Craftsmanship Community (MSCC) is organising the third edition of the Developers Conference in partnership with a number of local and international companies. Although the MSCC was founded back in 2013 it quickly became clear that our tropical island has a certain lack of informational and technical events. During some monthly meetups we spoke about this situation and that it would be very interesting and delightful to organise such an event.</p>
-          <p>After the success of previous years the Mauritius Software Craftsmanship Community (MSCC) is organising the third edition of the Developers Conference in partnership with a number of local and international companies. Although the MSCC was founded back in 2013 it quickly became clear that our tropical island has a certain lack of informational and technical events. During some monthly meetups we spoke about this situation and that it would be very interesting and delightful to organise such an event.</p>
-          <p>After the success of previous years the Mauritius Software Craftsmanship Community (MSCC) is organising the third edition of the Developers Conference in partnership with a number of local and international companies. Although the MSCC was founded back in 2013 it quickly became clear that our tropical island has a certain lack of informational and technical events. During some monthly meetups we spoke about this situation and that it would be very interesting and delightful to organise such an event.</p>
+          <p>Like in previous years the event is a free of charge, community-driven, three-days  IT  tech  conference  hosted  annually  in  Mauritius.  It’s  an  event  full of business opportunities and professional networking. Attendees can learn  about  latest  software  development  technologies,  methodologies,  as  well as cloud features and infrastructure.</p>
+          <p>The aim of the conference is to provide local software developers a buffet of tools, practices and principles applicable to tackling current challenges in  the  Mauritian  software  development  environment.  From  keeping  up  to  date  with  the  latest  technologies  and  trends  to  tackling  the  challenges  of  working in large enterprise systems – it’s a buffet of experiences, ideas and pragmatic advice as well as an opportunity to connect with peers across the industry.</p>
         </div>
       </div>
     </div>
