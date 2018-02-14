@@ -28,10 +28,6 @@ export default {
     return {
       menuItems: [
         {
-          name: 'Home',
-          url: '/'
-        },
-        {
           name: 'Sessions',
           url: '/'
         },
