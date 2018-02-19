@@ -6,6 +6,7 @@
     <home-video></home-video>
     <home-cfp></home-cfp>
     <home-sponsors></home-sponsors>
+    <home-gallery></home-gallery>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import homeIntro from '~/components/home-intro.vue'
 import homeVideo from '~/components/home-video.vue'
 import homeCfp from '~/components/home-cfp.vue'
 import homeSponsors from '~/components/home-sponsors.vue'
+import homeGallery from '~/components/home-gallery.vue'
 import NoSSR from 'vue-no-ssr'
 
 export default {
@@ -30,7 +32,8 @@ export default {
     homeIntro,
     homeVideo,
     homeCfp,
-    homeSponsors
+    homeSponsors,
+    homeGallery
   },
   data () {
     return {
