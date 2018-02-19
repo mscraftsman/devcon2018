@@ -8,16 +8,18 @@
       </div>
       <div class="menu-wrapper" :class="openState">
         <ul class="menu-items">
-          <li class="menu-item" :key="index" v-for="(item, index) in menuItems"><nuxt-link :to="item.url">{{item.name}}</nuxt-link></li>
+          <li class="menu-item" :key="index" v-for="(item, index) in menuItems">
+            <nuxt-link :to="item.url" @click.native="scrollToElement(item.path, $event)">{{item.name}}</nuxt-link>
+          </li>
         </ul>
       </div>
       <div class="menu-button">
         <button type="button" @click="openMenu">Menu</button>
       </div>
       <div class="register-button">
-        <nuxt-link to="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">
+        <a target="_blank" href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">
           <span>Register</span>
-        </nuxt-link>
+        </a>
       </div>
     </header>
   </div>
@@ -28,16 +30,13 @@ export default {
     return {
       menuItems: [
         {
-          name: 'Home',
-          url: '/'
-        },
-        {
           name: 'Sessions',
           url: '/'
         },
         {
           name: 'Speakers',
-          url: '/'
+          url: '/',
+          path: '#speakers'
         },
         {
           name: 'Extras',
@@ -49,7 +48,8 @@ export default {
         },
         {
           name: 'Sponsors',
-          url: '/'
+          url: '/',
+          path: '#sponsors'
         },
         {
           name: 'Contact',
@@ -62,6 +62,13 @@ export default {
   methods: {
     openMenu () {
       this.openState = (this.openState === null) ? 'opened' : null
+    },
+    scrollToElement (element, event) {
+      let name = this.$route.name
+      let id = element.substring(1, element.length)
+      if (name === 'index') {
+        this.$scrollTo('#' + id)
+      }
     }
   }
 }
@@ -70,7 +77,7 @@ export default {
 
   $tablet: 1024px;
   $tablet-portrait: 768px;
-  $mobiie: 540px;
+  $mobile: 540px;
 
   .full-section-container {
     display: grid;
@@ -318,6 +325,30 @@ export default {
 
         a {
           font-size: 18px;
+        }
+      }
+    }
+
+  }
+
+  @media (max-width: $mobile) {
+    .main-header {
+      .logo-wrapper {
+        transform: skewX(-15deg) scaleX(1.2);
+        a {
+          transform: skewX(13deg) scaleX(0.9);
+        }
+      }
+
+      .menu-button {
+        button {
+          font-size: 17px;
+        }
+      }
+
+      .register-button {
+        a {
+          font-size: 17px;
         }
       }
     }

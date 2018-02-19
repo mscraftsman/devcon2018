@@ -47,6 +47,7 @@
       grid-column: 1 / 2;
       padding: calc(var(--gutter) * 2.5) calc(var(--gutter) / 2);
       z-index: 1;
+      padding-bottom: 0;
     }
 
     .video-wrapper {

@@ -18,12 +18,12 @@
           </no-ssr>
         </div>
         <div class="register">
-          <nuxt-link to="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">Register</nuxt-link>
+          <a target="_blank" href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">Register</a>
         </div>
       </div>
 
       <div class="footer-text-wrapper">
-        <h3>17 - 19 May — Voila Hotel & Flying Dodo, Bagatelle</h3>
+        <h3>17 - 19 May — Voila Hotel &amp; Flying Dodo, Bagatelle</h3>
       </div>
     </div>
   </section>

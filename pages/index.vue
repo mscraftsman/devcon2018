@@ -4,6 +4,8 @@
     <home-main></home-main>
     <home-intro></home-intro>
     <home-video></home-video>
+    <home-cfp></home-cfp>
+    <home-sponsors></home-sponsors>
   </div>
 </template>
 
@@ -15,7 +17,9 @@
 import headerSection from '~/components/header.vue'
 import homeMain from '~/components/home-main.vue'
 import homeIntro from '~/components/home-intro.vue'
-import homeVideo from '~/components/home-Video.vue'
+import homeVideo from '~/components/home-video.vue'
+import homeCfp from '~/components/home-cfp.vue'
+import homeSponsors from '~/components/home-sponsors.vue'
 import NoSSR from 'vue-no-ssr'
 
 export default {
@@ -24,7 +28,9 @@ export default {
     'no-ssr': NoSSR,
     homeMain,
     homeIntro,
-    homeVideo
+    homeVideo,
+    homeCfp,
+    homeSponsors
   },
   data () {
     return {

@@ -71,6 +71,9 @@ module.exports = {
   css: [
     '@/assets/style/main.scss'
   ],
+  plugins : [
+    { src: '~/plugins/smooth-scroll', ssr: false }
+  ],
   mode: 'spa',
   build: {
     /*

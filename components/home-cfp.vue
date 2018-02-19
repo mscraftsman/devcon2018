@@ -1,0 +1,245 @@
+<template>
+  <div class="full-section-container" id="speakers">
+    <div class="section-title-wrapper">
+      <small>IT Craftsman speaking this year</small>
+      <h2>Speakers of 2018</h2>
+    </div>
+    <div class="section-description-wrapper">
+      <div class="speakers-container" v-if="hasSpeakers">
+        <div class="speaker-wrapper" v-for="(speaker, index) in speakers" :key="index">
+          <div class="image-wrapper">
+            <img :src="speakerImage(speaker)" :alt="speaker.name">
+          </div>
+          <div class="details-wrapper">
+            <h3>{{speaker.name}}</h3>
+            <div class="social-icons">
+              <a target="_blank" :href="speaker.twitter"><i class="fab fa-twitter"></i></a>
+              <a target="_blank" :href="speaker.website"><i class="fas fa-code"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="button-container">
+        <a href="https://sessionize.com/devcon-mauritius-2018/" target="_blank" class="button">Apply as Speaker</a>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data () {
+    return {
+      speakers: [
+        // {
+        //   name: 'Nirvan Pagooah',
+        //   image: 'TejasPagooah.jpg',
+        //   twitter: '@nirvanpagooah',
+        //   website: 'http://www.nirvan.pagooah.com'
+        // }
+      ]
+    }
+  },
+  computed: {
+    hasSpeakers () {
+      if (this.speakers && this.speakers.length) {
+        return true
+      }
+    }
+  },
+  methods: {
+    speakerImage (speaker) {
+      if (speaker && speaker.image && speaker.image !== null) {
+        return '/images/speakers/' + speaker.image
+      } else {
+        return '/images/speakers/default.jpg'
+      }
+    }
+  }
+}
+</script>
+<style lang="scss" scoped>
+  $tablet: 1024px;
+  $tablet-portrait: 768px;
+  $mobile: 540px;
+
+  .full-section-container {
+    display: grid;
+    grid-template-columns: [full-start] 1fr [container-start] minmax(300px, 1300px) [container-end] 1fr [full-end];
+    background: rgba(0,0,0,.05);
+    background-size: cover, cover;
+    padding: calc(var(--gutter) * 3) calc(var(--gutter) / 2);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .section-title-wrapper {
+    margin-bottom: calc(var(--gutter) * 3);
+    grid-column: container;
+    text-align: center;
+
+    small {
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+      color: var(--color-green);
+      font-family: var(--font-shentox);
+      font-size: 18px;
+    }
+    h2 {
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 53px;
+      line-height: 55px;
+      font-family: var(--font-glacial);
+
+    }
+
+    p {
+      line-height: 25px;
+      font-size: 18px;
+    }
+  }
+
+  .section-description-wrapper {
+    grid-column: container;
+
+    .speakers-container {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      margin-bottom: calc(var(--gutter) * 2);
+
+      .speaker-wrapper {
+        margin-bottom: calc(var(--gutter) / 1);
+
+
+        .image-wrapper {
+          text-align: center;
+          margin-bottom: calc(var(--gutter) / 2);
+
+          img {
+            border-radius: 200px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            object-position: 50% 50%;
+            margin: 0 auto;
+            filter: grayscale(100%);
+            box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+
+          }
+        }
+
+        .details-wrapper {
+          text-align: center;
+
+          h3 {
+            color: var(--color-blue);
+            text-transform: uppercase;
+            font-family: var(--font-glacial);
+            margin-bottom: calc(var(--gutter) / 6);
+          }
+
+          .social-icons {
+            a {
+              padding: calc(var(--gutter) / 4);
+              display: inline-block;
+
+              i {
+                color: var(--color-green);
+                font-size: 17px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .button-container {
+      text-align: center;
+
+      .button {
+        height: 45px;
+        border-radius: 5px;
+        border: 3px solid var(--color-green);
+        color: var(--color-green);
+        font-family: var(--font-shentox);
+        padding: 0 calc(var(--gutter));
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 20px;
+        display: inline-flex;
+        align-items: center;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .section-title-wrapper {
+      h2 {
+        font-size: 45px;
+        line-height: 50px;
+      }
+    }
+
+    .section-description-wrapper {
+      .speakers-container {
+        grid-template-columns: repeat(4, 1fr);
+
+        .speaker-wrapper {
+          .image-wrapper {
+            img {
+              height: 120px;
+              width: 120px;
+            }
+          }
+          .details-wrapper {
+            h3 {
+              font-size: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $tablet-portrait) {
+    .section-description-wrapper {
+      .speakers-container {
+        grid-template-columns: repeat(3, 1fr);
+
+        .speaker-wrapper {
+          .image-wrapper {
+            img {
+              height: 100px;
+              width: 100px;
+            }
+          }
+          .details-wrapper {
+            h3 {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .section-title-wrapper {
+      h2 {
+        font-size: 35px;
+        line-height: 40px;
+      }
+    }
+
+    .section-description-wrapper {
+      .speakers-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+</style>
+
