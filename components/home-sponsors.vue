@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="button-container">
-        <a href="#" target="_blank" class="button">Become as sponsor</a>
+        <a href="/DevCon2018-SponsorshipProposal.pdf" target="_blank" class="button">Become a sponsor</a>
       </div>
     </div>
   </div>
