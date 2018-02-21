@@ -8,7 +8,7 @@
         <div class="content-wrapper">
           <div class="section-title-wrapper white-title">
             <small>2017 Recap (Credit: L'Express Maurice)</small>
-            <h2>Can you can expect to see this year</h2>
+            <h2>What you can expect to see this year</h2>
           </div>
           <div class="section-description-wrapper">
           </div>
