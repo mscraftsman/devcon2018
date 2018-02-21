@@ -40,7 +40,7 @@ export default {
         },
         {
           name: 'Extras',
-          url: '/'
+          url: '/extras'
         },
         {
           name: 'Hackathon',
