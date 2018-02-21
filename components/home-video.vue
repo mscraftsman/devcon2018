@@ -2,9 +2,6 @@
   <div>
     <div class="full-section-container">
       <div class="description-container">
-        <div class="video-wrapper">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/6ITHnbYgglo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
         <div class="content-wrapper">
           <div class="section-title-wrapper white-title">
             <small>2017 Recap (Credit: L'Express Maurice)</small>
@@ -12,6 +9,9 @@
           </div>
           <div class="section-description-wrapper">
           </div>
+        </div>
+        <div class="video-wrapper">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/6ITHnbYgglo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
