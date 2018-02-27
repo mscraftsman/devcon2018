@@ -75,7 +75,7 @@ module.exports = {
     { src: '~/plugins/smooth-scroll', ssr: false },
     { src: '~/plugins/masonry', ssr: false }
   ],
-  mode: 'spa',
+  // mode: 'spa',
   build: {
     /*
     ** Run ESLint on save
