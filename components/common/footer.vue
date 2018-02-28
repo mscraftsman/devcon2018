@@ -95,15 +95,15 @@
           },
           {
             name: 'Sponsors',
-            url: '/press'
+            url: '/#sponsors'
           },
           {
             name: 'Jobs',
-            url: 'Jobs'
+            url: '/jobs'
           },
           {
             name: 'Speakers',
-            url: '/speakers'
+            url: '/#speakers'
           },
           {
             name: 'Extras',
