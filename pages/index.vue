@@ -16,7 +16,7 @@
   * tejas@pagooah.com
 */
 
-import headerSection from '~/components/header.vue'
+import headerSection from '~/components/common/header.vue'
 import homeMain from '~/components/home-main.vue'
 import homeIntro from '~/components/home-intro.vue'
 import homeVideo from '~/components/home-video.vue'
