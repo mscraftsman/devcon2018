@@ -36,7 +36,7 @@ export default {
         {
           name: 'Speakers',
           url: '/',
-          path: '/#speakers'
+          path: '#speakers'
         },
         {
           name: 'Extras',
@@ -49,7 +49,7 @@ export default {
         {
           name: 'Sponsors',
           url: '/',
-          path: '/#sponsors'
+          path: '#sponsors'
         },
         {
           name: 'Contact',
