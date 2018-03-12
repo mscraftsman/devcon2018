@@ -6,11 +6,16 @@
     </div>
     <div class="section-description-wrapper">
       <div class="sponsors-container" v-if="hassponsors">
-        <div class="sponsor-wrapper" v-for="(sponsor, index) in sponsors" :key="index">
-          <div class="image-wrapper">
-            <a target="_blank" :href="sponsor.url">
-              <img :src="sponsorImage(sponsor)" :alt="sponsor.name">
-            </a>
+        <div class="sponsor-package" v-for="(sponsorPackage, index) in getSponsorsByPackage" :key="index">
+          <h2>{{sponsorPackage.name}}</h2>
+          <div class="sponsors-wrapper">
+            <div class="sponsor-wrapper" v-for="(sponsor, index) in sponsorPackage.sponsors" :key="index">
+              <div class="image-wrapper">
+                <a target="_blank" :href="sponsor.url">
+                  <img :src="sponsorImage(sponsor)" :alt="sponsor.name">
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -21,29 +26,54 @@
   </div>
 </template>
 <script>
+
+import _ from 'lodash'
+
 export default {
   data () {
     return {
+      packages: [
+        {
+          name: 'Platinum',
+          key: 'platinum'
+        },
+        {
+          name: 'Gold',
+          key: 'gold'
+        },
+        {
+          name: 'Silver',
+          key: 'silver'
+        },
+        {
+          name: 'Bronze',
+          key: 'bronze'
+        }
+      ],
       sponsors: [
         {
           name: 'IOS Indian Ocean Software Ltd.',
           image: 'ios.jpg',
-          url: 'http://ios.mu/'
+          url: 'http://ios.mu/',
+          package: 'bronze'
         },
         {
           name: 'LSL Digital',
           image: 'lsldigital.png',
-          url: 'http://lsl.digital'
+          url: 'http://lsl.digital',
+          package: 'bronze'
         },
         {
           name: 'Extension Interactive',
           image: 'extension_interactive.png',
-          url: 'http://maurice.extension-interactive.com/'
+          url: 'http://maurice.extension-interactive.com/',
+          package: 'bronze'
         },
         {
           name: 'Graphics Temple',
           image: 'Graphics_Temple.jpg',
-          url: 'http://graphicstemple.io'
+          url: 'http://graphicstemple.io',
+          package: 'bronze'
         }
       ]
     }
@@ -53,6 +83,24 @@ export default {
       if (this.sponsors && this.sponsors.length) {
         return true
       }
+    },
+    getSponsorsByPackage () {
+      let packages = []
+
+      this.packages.map(p => {
+        let sponsorsOfThisPackage = this.sponsors.filter(pack => {
+          return pack.package === p.key
+        })
+
+        if (sponsorsOfThisPackage && sponsorsOfThisPackage.length) {
+          packages.push({
+            name: p.name,
+            sponsors: sponsorsOfThisPackage
+          })
+        }
+      })
+
+      return packages
     }
   },
   methods: {
@@ -114,38 +162,55 @@ export default {
     grid-column: container;
 
     .sponsors-container {
-      display: flex;
       margin-bottom: calc(var(--gutter) * 2);
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
 
-      .sponsor-wrapper {
-        margin-bottom: calc(var(--gutter) / 1);
-        width: calc(100% * 1/5);
+      .sponsor-package {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
 
+        h2 {
+          font-family: var(--font-shentox);
+          text-transform: uppercase;
+          color: var(--color-green);
+          margin-bottom: var(--gutter);
+          font-size: 20px;
+          font-weight: 700;
+        }
 
-        .image-wrapper {
-          text-align: center;
-          margin-bottom: calc(var(--gutter) / 2);
+        .sponsors-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
 
-          a {
-            display: block;
-            
+          .sponsor-wrapper {
+            margin-bottom: calc(var(--gutter) / 1);
+            width: calc(100% * 1/5);
 
-            &:hover {
-              img {
-                opacity: 1;
-                filter: grayscale(0);
+            .image-wrapper {
+              text-align: center;
+              margin-bottom: calc(var(--gutter) / 2);
+
+              a {
+                display: block;
+
+                &:hover {
+                  img {
+                    opacity: 1;
+                    filter: grayscale(0);
+                  }
+                }
+
+                img {
+                  max-width: 70%;
+                  margin: 0 auto;
+                  filter: grayscale(100%);
+                  opacity: 0.6;
+                  transition: all 0.3s ease-in-out;
+                }
               }
-            }
-
-            img {
-              max-width: 70%;
-              margin: 0 auto;
-              filter: grayscale(100%);
-              opacity: 0.6;
-              transition: all 0.3s ease-in-out;
             }
           }
         }
@@ -185,8 +250,12 @@ export default {
       .sponsors-container {
         grid-template-columns: repeat(4, 1fr);
 
-        .sponsor-wrapper {
-          width: calc(100% * 1/4);
+        .sponsor-package {
+          .sponsors-wrapper {
+            .sponsor-wrapper {
+              width: calc(100% * 1 / 4);
+            }
+          }
         }
       }
     }
@@ -195,13 +264,17 @@ export default {
   @media (max-width: $tablet-portrait) {
     .section-description-wrapper {
       .sponsors-container {
-        .sponsor-wrapper {
-          width: calc(100% * 1/2);
+        .sponsor-package {
+          .sponsors-wrapper {
+            .sponsor-wrapper {
+              width: calc(100% * 1 / 2);
 
-          .image-wrapper {
-            a {
-              img {
-                max-width: 65%;
+              .image-wrapper {
+                a {
+                  img {
+                    max-width: 65%;
+                  }
+                }
               }
             }
           }
@@ -220,12 +293,15 @@ export default {
 
     .section-description-wrapper {
       .sponsors-container {
-        .sponsor-wrapper {
-
-          .image-wrapper {
-            a {
-              img {
-                max-width: 70%;
+        .sponsor-package {
+          .sponsors-wrapper {
+            .sponsor-wrapper {
+              .image-wrapper {
+                a {
+                  img {
+                    max-width: 70%;
+                  }
+                }
               }
             }
           }

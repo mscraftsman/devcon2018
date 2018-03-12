@@ -7,6 +7,7 @@
     <home-cfp></home-cfp>
     <home-sponsors></home-sponsors>
     <home-gallery></home-gallery>
+    <past-events></past-events>
     <footer-common></footer-common>
   </div>
 </template>
@@ -24,6 +25,7 @@ import homeCfp from '~/components/home-cfp.vue'
 import homeSponsors from '~/components/home-sponsors.vue'
 import homeGallery from '~/components/home-gallery.vue'
 import footerCommon from '~/components/common/footer.vue'
+import pastEvents from '~/components/home-past-events.vue'
 import NoSSR from 'vue-no-ssr'
 
 export default {
@@ -36,7 +38,8 @@ export default {
     homeCfp,
     homeSponsors,
     homeGallery,
-    footerCommon
+    footerCommon,
+    pastEvents
   },
   data () {
     return {
