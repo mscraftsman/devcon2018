@@ -3,14 +3,14 @@
     <div class="logo-container">
       <div class="logo-wrapper">
         <!-- <img src="~/assets/images/logo.svg" alt="MSCC Logo" class="logo-svg"> -->
-        <div class="date-wrapper">
-          17 - 19 May
-        </div>
         <div class="text-wrapper">
           <h1 class="title">Developers Conference</h1>
           <div class="year-wrapper">
             <span>2018</span>
           </div>
+        </div>
+        <div class="date-wrapper">
+          17 - 19 May
         </div>
       </div>
       <div class="description-wrapper">
@@ -96,9 +96,9 @@
           font-family: var(--font-shentox);
           text-transform: uppercase;
           color: var(--color-white);
-          font-size: 40px;
+          font-size: 35px;
           line-height: 50px;
-          font-weight: 300;
+          font-weight: 500;
           text-shadow: 0 10px 50px rgba(0, 0, 0, 0.05);
         }
 
@@ -319,6 +319,7 @@
 
         .logo-wrapper {
           flex-direction: column;
+          margin-bottom: calc(var(--gutter) / 2);
 
           .date-wrapper {
             font-size: 25px;
@@ -327,6 +328,7 @@
 
           .text-wrapper {
             flex-direction: column;
+            margin-bottom: var(--gutter);
 
             .title {
               font-size: 25px;
