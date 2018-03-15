@@ -28,7 +28,7 @@
           </ul>
         </div>
         <div class="copyright">
-          <p>Crafted with <i class="fas fa-heart"></i> in Mauritius.</p>
+          <p>Crafted with <i class="fa fa-heart"></i> in Mauritius.</p>
           <p>JK. w/ a keyboard & a mouse 😅</p>
         </div>
       </div>
