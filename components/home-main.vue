@@ -35,10 +35,12 @@
 </template>
 <script>
   import Countdown from '~/components/Countdown.vue'
+  import NoSSR from 'vue-no-ssr'
 
   export default {
     components: {
-      Countdown
+      Countdown,
+      'no-ssr': NoSSR
     }
   }
 </script>

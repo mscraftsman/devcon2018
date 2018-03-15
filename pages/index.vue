@@ -26,12 +26,10 @@ import homeSponsors from '~/components/home-sponsors.vue'
 import homeGallery from '~/components/home-gallery.vue'
 import footerCommon from '~/components/common/footer.vue'
 import pastEvents from '~/components/home-past-events.vue'
-import NoSSR from 'vue-no-ssr'
 
 export default {
   components: {
     headerSection,
-    'no-ssr': NoSSR,
     homeMain,
     homeIntro,
     homeVideo,
