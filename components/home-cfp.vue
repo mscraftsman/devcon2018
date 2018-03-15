@@ -160,18 +160,25 @@ export default {
 
       .button {
         height: 45px;
+        padding: 0 calc(var(--gutter));
+        padding-top: 9px;
+        display: inline-block;
         border-radius: 5px;
         border: 3px solid var(--color-green);
         color: var(--color-green);
         font-family: var(--font-shentox);
-        padding: 0 calc(var(--gutter));
         text-transform: uppercase;
         text-decoration: none;
         font-weight: 700;
         font-size: 20px;
-        display: inline-flex;
         align-items: center;
         margin: 0 auto;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background: var(--color-green);
+          color: var(--color-white);
+        }
       }
     }
   }
