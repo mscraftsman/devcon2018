@@ -5,7 +5,7 @@
       <h2>Past events</h2>
     </div>
     <div class="past-events-container">
-      <div class="event-wrapper" v-for="(event, index) in events" :key="index" >
+      <div class="event-wrapper" v-for="(event, index) in getEvents" :key="index" >
         <a class="past-event" target="_blank" rel="noopener noreferrer" :href="event.url" :style="getBackground(event)">
           <h4>{{event.name}}</h4>
         </a>
@@ -14,6 +14,8 @@
   </div>
 </template>
 <script>
+  import _ from 'lodash'
+
   export default {
     data () {
       return {
@@ -55,6 +57,11 @@
             weight: 5
           }
         ]
+      }
+    },
+    computed: {
+      getEvents () {
+        return _.orderBy(this.events, 'weight', 'desc')
       }
     },
     methods: {
