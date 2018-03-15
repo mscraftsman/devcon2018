@@ -21,7 +21,7 @@ export default {
       photos: [
         'DSC_0108.jpg',
         'DSC_0134.jpg',
-        'DSC_0044 (1).jpg',        
+        'DSC_0044 (1).jpg',
         'DSC_0016.jpg',
         'DSC_0023.jpg',
         'DSC_0066.jpg',
@@ -57,6 +57,7 @@ export default {
     background: transparent;
     background-size: cover, cover;
     padding: calc(var(--gutter) / 4);
+    padding-bottom: 0;
   }
 
   * {
@@ -65,9 +66,11 @@ export default {
 
   .section-description-wrapper {
     grid-column: full;
+    line-height: 0;
 
     .gallery-container {
       .photo {
+        margin-bottom: 5px;
         img {
           width: 100%;
         }
