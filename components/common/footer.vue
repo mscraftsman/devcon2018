@@ -69,7 +69,7 @@
         quicklinks: [
           {
             name: 'Code of Conduct',
-            url: 'https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/pages/19092247/Code_of_Conduct/'
+            url: 'https://www.mscc.mu/code-of-conduct/'
           },
           {
             name: 'Press Material',
