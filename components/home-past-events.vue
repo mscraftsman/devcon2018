@@ -20,7 +20,7 @@
         events: [
           {
             name: 'Developers Conference 2015',
-            url: 'http://2015.mscc.mu/',
+            url: 'https://2015.mscc.mu/',
             image: 'devcon_2015.jpg',
             weight: 1
           },
@@ -32,7 +32,7 @@
           },
           {
             name: 'Developers Conference 2016',
-            url: 'http://2016.mscc.mu/',
+            url: 'https://2016.mscc.mu/',
             image: 'devcon_2016.jpg',
             weight: 3
           },
