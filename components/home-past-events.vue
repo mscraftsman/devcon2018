@@ -6,7 +6,7 @@
     </div>
     <div class="past-events-container">
       <div class="event-wrapper" v-for="(event, index) in events" :key="index" >
-        <a class="past-event" target="_blank" :href="event.url" :style="getBackground(event)">
+        <a class="past-event" target="_blank" rel="noopener noreferrer" :href="event.url" :style="getBackground(event)">
           <h4>{{event.name}}</h4>
         </a>
       </div>
