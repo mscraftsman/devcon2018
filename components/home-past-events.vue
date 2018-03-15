@@ -22,13 +22,13 @@
             name: 'Developers Conference 2015',
             url: 'http://2015.mscc.mu/',
             image: 'devcon_2015.jpg',
-            weight: 5
+            weight: 1
           },
           {
             name: 'Global Azure Bootcamp 2015',
             url: 'http://gwabmauritius.azurewebsites.net/',
             image: 'gwab2015.jpeg',
-            weight: 4
+            weight: 0
           },
           {
             name: 'Developers Conference 2016',
@@ -46,13 +46,13 @@
             name: 'Xamarin Dev Days 2016',
             url: 'https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/233937043/',
             image: 'xamarin-2016.jpeg',
-            weight: 1
+            weight: 4
           },
           {
             name: 'Developers Conference 2017',
             url: 'https://2017.mscc.mu',
             image: 'devcon_2017.jpg',
-            weight: 0
+            weight: 5
           }
         ]
       }
