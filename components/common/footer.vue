@@ -28,7 +28,7 @@
           </ul>
         </div>
         <div class="copyright">
-          <p>Crafted with <i class="fas fa-heart"></i> in Mauritius.</p>
+          <p>Crafted with <i class="fa fa-heart"></i> in Mauritius.</p>
           <p>JK. w/ a keyboard & a mouse 😅</p>
         </div>
       </div>
@@ -69,7 +69,7 @@
         quicklinks: [
           {
             name: 'Code of Conduct',
-            url: 'https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/pages/19092247/Code_of_Conduct/'
+            url: 'https://www.mscc.mu/code-of-conduct/'
           },
           {
             name: 'Press Material',
