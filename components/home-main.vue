@@ -18,9 +18,7 @@
       </div>
       <div class="timer-wrapper">
         <div class="timer">
-          <no-ssr>
-            <Countdown deadline="May 17, 2018"></Countdown>
-          </no-ssr>
+          <Countdown deadline="May 17, 2018"></Countdown>
         </div>
         <div class="register">
           <a target="_blank" href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">Register</a>
