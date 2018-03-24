@@ -45,7 +45,7 @@ module.exports = {
     link: [
       { rel: 'canonical', href: 'https:/www.conference.mscc.mu' },
       { rel: 'icon', type: 'image/x-icon', href: '/images/favicon/favicon.ico' },
-      { rel: 'stylesheet', href: 'https:/use.fontawesome.com/releases/v5.0.6/css/all.css'},
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.6/css/all.css'},
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/images/favicon/favicon.ico' },
       { rel: 'apple-touch-icon', sizes: '57x57', href: '/images/favicon/apple-touch-icon-57x57.png' },
       { rel: 'apple-touch-icon', sizes: '60x60', href: '/images/favicon/apple-touch-icon-60x60.png' },
