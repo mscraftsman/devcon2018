@@ -11,51 +11,48 @@
     <footer-common></footer-common>
   </div>
 </template>
-
 <script>
-/*
-  * tejas@pagooah.com
-*/
+  /*
+    * tejas@pagooah.com
+  */
+  import headerSection from '~/components/common/header.vue'
+  import footerCommon from '~/components/common/footer.vue'
+  import homeMain from '~/components/home-main.vue'
+  import homeIntro from '~/components/home-intro.vue'
+  import homeVideo from '~/components/home-video.vue'
+  import homeCfp from '~/components/home-cfp.vue'
+  import homeSponsors from '~/components/home-sponsors.vue'
+  import homeGallery from '~/components/home-gallery.vue'
+  import pastEvents from '~/components/home-past-events.vue'
 
-import headerSection from '~/components/common/header.vue'
-import homeMain from '~/components/home-main.vue'
-import homeIntro from '~/components/home-intro.vue'
-import homeVideo from '~/components/home-video.vue'
-import homeCfp from '~/components/home-cfp.vue'
-import homeSponsors from '~/components/home-sponsors.vue'
-import homeGallery from '~/components/home-gallery.vue'
-import footerCommon from '~/components/common/footer.vue'
-import pastEvents from '~/components/home-past-events.vue'
+  export default {
+    components: {
+      headerSection,
+      homeMain,
+      homeIntro,
+      homeVideo,
+      homeCfp,
+      homeSponsors,
+      homeGallery,
+      footerCommon,
+      pastEvents
+    },
+    data () {
+      return {
 
-export default {
-  components: {
-    headerSection,
-    homeMain,
-    homeIntro,
-    homeVideo,
-    homeCfp,
-    homeSponsors,
-    homeGallery,
-    footerCommon,
-    pastEvents
-  },
-  data () {
-    return {
+      }
+    },
+    methods: {
+
+    },
+    computed: {
+
+    },
+    mounted () {
 
     }
-  },
-  methods: {
-
-  },
-  computed: {
-
-  },
-  mounted () {
-
   }
-}
 </script>
-
 <style lang="scss" scoped>
 
 </style>
