@@ -11,8 +11,8 @@
           <div class="sponsors-wrapper">
             <div class="sponsor-wrapper" v-for="(sponsor, index) in sponsorPackage.sponsors" :key="index">
               <div class="image-wrapper">
-                <a target="_blank" :href="sponsor.url">
-                  <img :src="sponsorImage(sponsor)" :alt="sponsor.name">
+                <a target="_blank" :href="sponsor.gsx$url.$t">
+                  <img :src="sponsorImage(sponsor)" :alt="sponsor.gsx$partner.$t">
                 </a>
               </div>
             </div>
@@ -28,10 +28,11 @@
 <script>
 
 import _ from 'lodash'
+import axios from 'axios'
 
 export default {
   data () {
-    return {
+    return { 
       packages: [
         {
           name: 'Platinum',
@@ -48,35 +49,27 @@ export default {
         {
           name: 'Bronze',
           key: 'bronze'
+        },
+        {
+          name: 'Speaker',
+          key: 'speaker'
+        },
+        {
+          name: 'Media Partner',
+          key: 'media partner'
+        },
+        {
+          name: 'Happy Hour',
+          key: 'happy hour'
         }
       ],
-      sponsors: [
-        {
-          name: 'IOS Indian Ocean Software Ltd.',
-          image: 'ios.jpg',
-          url: 'http://ios.mu/',
-          package: 'bronze'
-        },
-        {
-          name: 'LSL Digital',
-          image: 'lsldigital.png',
-          url: 'http://lsl.digital',
-          package: 'gold'
-        },
-        {
-          name: 'Extension Interactive',
-          image: 'extension_interactive.png',
-          url: 'http://maurice.extension-interactive.com/',
-          package: 'bronze'
-        },
-        {
-          name: 'Graphics Temple',
-          image: 'Graphics_Temple.jpg',
-          url: 'http://graphicstemple.io',
-          package: 'bronze'
-        }
-      ]
+      sponsors: []
     }
+  },
+  mounted() {
+    axios.get("https://spreadsheets.google.com/feeds/list/13wJkyOGY8fkx6TyWzNQgTvVuiM9Ty8WIO6ZB4zsjeoI/ogt46nu/public/values?alt=json")
+      .then( response => {this.sponsors = response.data.feed.entry})
+      .catch( error => { console.log(error); })
   },
   computed: {
     hassponsors () {
@@ -89,7 +82,7 @@ export default {
 
       this.packages.map(p => {
         let sponsorsOfThisPackage = this.sponsors.filter(pack => {
-          return pack.package === p.key
+          return pack.gsx$support.$t === "1" && pack.gsx$level.$t.toLowerCase() === p.key
         })
 
         if (sponsorsOfThisPackage && sponsorsOfThisPackage.length) {
@@ -105,8 +98,8 @@ export default {
   },
   methods: {
     sponsorImage (sponsor) {
-      if (sponsor && sponsor.image && sponsor.image !== null) {
-        return '/images/sponsors/' + sponsor.image
+      if (sponsor && sponsor.gsx$image.$t && sponsor.gsx$image.$t !== null) {
+        return '/images/sponsors/' + sponsor.gsx$image.$t
       } else {
         return '/images/sponsors/default.jpg'
       }
