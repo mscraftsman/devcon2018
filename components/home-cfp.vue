@@ -1,7 +1,7 @@
 <template>
   <div class="full-section-container" id="speakers">
     <div class="section-title-wrapper">
-      <small>IT Craftsman speaking this year</small>
+      <small>Software Craftsman speaking this year</small>
       <h2>Speakers of 2018</h2>
     </div>
     <div class="section-description-wrapper">
