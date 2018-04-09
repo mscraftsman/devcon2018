@@ -8,13 +8,13 @@
       <div class="speakers-container" v-if="hasSpeakers">
         <div class="speaker-wrapper" v-for="(speaker, index) in speakers" :key="index">
           <div class="image-wrapper">
-            <img :src="speakerImage(speaker)" :alt="speaker.fullName">
+            <img :src="speakerImage(speaker)" :alt="speaker.tagLine" :title="speaker.tagLine">
           </div>
           <div class="details-wrapper">
             <h3>{{speaker.fullName}}</h3>
             <div class="social-icons">
-              <a target="_blank" :href="speaker.twitter"><i class="fab fa-twitter"></i></a>
-              <a target="_blank" :href="speaker.website"><i class="fas fa-code"></i></a>
+              <a target="_blank" :href="speakerTwitter(speaker)" v-if="speakerTwitter(speaker)"><i class="fab fa-twitter"></i></a>
+              <a target="_blank" :href="speakerWebsite(speaker)" v-if="speakerWebsite(speaker)"><i class="fas fa-code"></i></a>
             </div>
           </div>
         </div>
@@ -55,12 +55,40 @@ export default {
     }
   },
   methods: {
+    // hasTwitter (speaker) {
+
+    // },
+    // hasWebsite(speaker) {
+
+    // },
     speakerImage (speaker) {
       if (speaker && speaker.profilePicture && speaker.profilePicture !== null) {
         return speaker.profilePicture
       } else {
         return '/images/speakers/mscc-placeholder.png'
       }
+    },
+    speakerTwitter(speaker) {
+      if (speaker && speaker.links && speaker.links !== null) {
+        let link = speaker.links.filter( function (el) {
+          return el.linkType === 'Twitter';
+        })
+        if (link && link.length > 0) {
+          return link[0].url;
+        }
+      }
+      return null;
+    },
+    speakerWebsite(speaker) {
+      if (speaker && speaker.links && speaker.links !== null) {
+        let link = speaker.links.filter( function (el) {
+          return el.linkType === 'Website';
+        })
+        if (link && link.length > 0) {
+          return link[0].url;
+        }
+      }
+      return null;
     }
   }
 }
