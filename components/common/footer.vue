@@ -14,16 +14,16 @@
         <div class="quick-links-wrapper">
           <h4>Quick Links</h4>
           <ul class="quick-links">
-            <li class="list-item" :key="index" v-for="(link, index) in quicklinks">
-              <a :href="link.url">{{link.name}}</a>
+            <li class="list-item" :key="index" v-for="(item, index) in quicklinks">
+              <a :href="item.url">{{item.name}}</a>
             </li>
           </ul>
         </div>
         <div class="sitemap-wrapper">
           <h4>Sitemap</h4>
           <ul class="quick-links">
-            <li class="list-item" :key="index" v-for="(link, index) in sitemap">
-              <a :href="link.url">{{link.name}}</a>
+            <li class="list-item" :key="index" v-for="(item, index) in sitemap">
+              <a :href="item.url">{{item.name}}</a>
             </li>
           </ul>
         </div>
@@ -110,8 +110,8 @@
             url: '/extras'
           },
           {
-            name: 'Hackathon',
-            url: '/hackathon'
+            name: 'MCB InovApp Challenge',
+            url: 'https://www.mcb.mu/inovapp/'
           }
         ]
       }

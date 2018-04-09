@@ -8,10 +8,10 @@
       <div class="speakers-container" v-if="hasSpeakers">
         <div class="speaker-wrapper" v-for="(speaker, index) in speakers" :key="index">
           <div class="image-wrapper">
-            <img :src="speakerImage(speaker)" :alt="speaker.name">
+            <img :src="speakerImage(speaker)" :alt="speaker.fullName">
           </div>
           <div class="details-wrapper">
-            <h3>{{speaker.name}}</h3>
+            <h3>{{speaker.fullName}}</h3>
             <div class="social-icons">
               <a target="_blank" :href="speaker.twitter"><i class="fab fa-twitter"></i></a>
               <a target="_blank" :href="speaker.website"><i class="fas fa-code"></i></a>
@@ -19,13 +19,16 @@
           </div>
         </div>
       </div>
-      <div class="button-container">
+      <div class="button-container" v-if="!hasSpeakers">
         <a href="https://sessionize.com/devcon-mauritius-2018/" target="_blank" class="button">Apply as Speaker</a>
       </div>
     </div>
   </div>
 </template>
 <script>
+
+import axios from 'axios'
+
 export default {
   data () {
     return {
@@ -39,6 +42,11 @@ export default {
       ]
     }
   },
+  mounted() {
+    axios.get("https://sessionize.com/api/v2/m1l86vhf/view/speakers")
+      .then( response => {this.speakers = response.data})
+      .catch( error => { console.log(error); })
+  },
   computed: {
     hasSpeakers () {
       if (this.speakers && this.speakers.length) {
@@ -48,10 +56,10 @@ export default {
   },
   methods: {
     speakerImage (speaker) {
-      if (speaker && speaker.image && speaker.image !== null) {
-        return '/images/speakers/' + speaker.image
+      if (speaker && speaker.profilePicture && speaker.profilePicture !== null) {
+        return speaker.profilePicture
       } else {
-        return '/images/speakers/default.jpg'
+        return '/images/speakers/mscc-placeholder.png'
       }
     }
   }

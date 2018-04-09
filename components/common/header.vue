@@ -9,7 +9,8 @@
       <div class="menu-wrapper" :class="openState">
         <ul class="menu-items">
           <li class="menu-item" :key="index" v-for="(item, index) in menuItems">
-            <nuxt-link :to="item.url" @click.native="scrollToElement(item.path, $event)">{{item.name}}</nuxt-link>
+            <nuxt-link :to="item.url" @click.native="scrollToElement(item.path, $event)" v-if="item.url">{{item.name}}</nuxt-link>
+            <a :href="item.link" target="_blank" rel="noopener" v-if="item.link">{{item.name}}</a>
           </li>
         </ul>
       </div>
@@ -43,8 +44,8 @@ export default {
           url: '/extras'
         },
         {
-          name: 'Hackathon',
-          url: '/'
+          name: 'MCB InovApp Challenge',
+          link: 'https://www.mcb.mu/inovapp/'
         },
         {
           name: 'Sponsors',
