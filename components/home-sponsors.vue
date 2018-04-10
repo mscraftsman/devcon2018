@@ -43,16 +43,16 @@ export default {
           key: 'gold'
         },
         {
+          name: 'Speaker Sponsor',
+          key: 'speaker'
+        },
+        {
           name: 'Silver',
           key: 'silver'
         },
         {
           name: 'Bronze',
           key: 'bronze'
-        },
-        {
-          name: 'Speaker',
-          key: 'speaker'
         },
         {
           name: 'Media Partner',
