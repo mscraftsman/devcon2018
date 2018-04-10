@@ -13,8 +13,9 @@
           <div class="details-wrapper">
             <h3>{{speaker.fullName}}</h3>
             <div class="social-icons">
-              <a target="_blank" :href="speakerTwitter(speaker)" v-if="speakerTwitter(speaker)"><i class="fab fa-twitter"></i></a>
-              <a target="_blank" :href="speakerWebsite(speaker)" v-if="speakerWebsite(speaker)"><i class="fas fa-code"></i></a>
+              <a target="_blank" :href="speakerLink(speaker, 'Twitter')" v-if="speakerLink(speaker, 'Twitter')"><i class="fab fa-twitter"></i></a>
+              <a target="_blank" :href="speakerLink(speaker, 'LinkedIn')" v-if="speakerLink(speaker, 'LinkedIn')"><i class="fab fa-linkedin"></i></a>
+              <a target="_blank" :href="speakerLink(speaker, 'Blog')" v-if="speakerLink(speaker, 'Blog')"><i class="fas fa-code"></i></a>
             </div>
           </div>
         </div>
@@ -68,21 +69,10 @@ export default {
         return '/images/speakers/mscc-placeholder.png'
       }
     },
-    speakerTwitter(speaker) {
+    speakerLink(speaker, type) {
       if (speaker && speaker.links && speaker.links !== null) {
         let link = speaker.links.filter( function (el) {
-          return el.linkType === 'Twitter';
-        })
-        if (link && link.length > 0) {
-          return link[0].url;
-        }
-      }
-      return null;
-    },
-    speakerWebsite(speaker) {
-      if (speaker && speaker.links && speaker.links !== null) {
-        let link = speaker.links.filter( function (el) {
-          return el.linkType === 'Website';
+          return el.linkType === type;
         })
         if (link && link.length > 0) {
           return link[0].url;
