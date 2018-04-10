@@ -44,7 +44,7 @@ export default {
           url: '/extras'
         },
         {
-          name: 'MCB InovApp Challenge',
+          name: 'MCB InovApp',
           link: 'https://www.mcb.mu/inovapp/'
         },
         {
