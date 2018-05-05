@@ -72,16 +72,20 @@
             url: 'https://www.mscc.mu/code-of-conduct/'
           },
           {
+            name: 'MCB InovApp Challenge',
+            url: 'https://www.mcb.mu/inovapp/'
+          },
+          {
             name: 'Press Material',
             url: '/press'
           },
           {
-            name: 'Contact Us',
-            url: 'mailto:conference@mscc.mu'
-          },
-          {
             name: 'Become a Sponsor',
             url: '/DevCon2018-SponsorshipProposal.pdf'
+          },
+          {
+            name: 'Contact Us',
+            url: 'mailto:conference@mscc.mu'
           },
           {
             name: 'Apply as a speaker',
@@ -90,28 +94,28 @@
         ],
         sitemap: [
           {
-            name: 'Venues',
-            url: '/venues'
+            name: 'Sessions',
+            url: '/sessions'
           },
           {
             name: 'Sponsors',
             url: '/#sponsors'
           },
           {
-            name: 'Jobs',
-            url: '/jobs'
-          },
-          {
             name: 'Speakers',
             url: '/#speakers'
+          },
+          {
+            name: 'Jobs',
+            url: '/jobs'
           },
           {
             name: 'Extras',
             url: '/extras'
           },
           {
-            name: 'MCB InovApp Challenge',
-            url: 'https://www.mcb.mu/inovapp/'
+            name: 'Venues',
+            url: '/venues'
           }
         ]
       }

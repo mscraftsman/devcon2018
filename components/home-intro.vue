@@ -169,7 +169,5 @@
         font-size: 17px;
       }
     }
-
   }
-
 </style>

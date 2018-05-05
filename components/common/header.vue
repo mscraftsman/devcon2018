@@ -32,7 +32,7 @@ export default {
       menuItems: [
         {
           name: 'Sessions',
-          url: '/'
+          url: '/sessions'
         },
         {
           name: 'Speakers',

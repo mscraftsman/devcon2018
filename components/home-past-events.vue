@@ -142,7 +142,7 @@
       font-family: var(--font-shentox);
       font-weight: 500;
       text-align: center;
-      padding: calc(var(--gutter) * 2);
+      padding: calc(var(--gutter) * 5) calc(var(--gutter) * 2);
       background: var(--color-blue);
       color: var(--color-white);
       text-transform: uppercase;
