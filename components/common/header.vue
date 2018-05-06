@@ -54,7 +54,7 @@ export default {
         },
         {
           name: 'Contact',
-          url: '/'
+          link: 'mailto:conference@mscc.mu'
         }
       ],
       openState: null
