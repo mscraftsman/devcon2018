@@ -4,8 +4,8 @@
     <div class="full-section-container">
       <div class="container">
         <div class="page-title-wrapper">
-          <small>The Agenda</small>
-          <h1>Schedule of Sessions</h1>
+          <small>Plan your attendance to your liking</small>
+          <h1>Agenda</h1>
           <p>&nbsp;</p>
         </div>
       </div>
@@ -39,11 +39,11 @@
 
     <div class="full-section-container" v-if="!hasSessions">
       <div class="section-title-wrapper">
-          <small>Plan your attendance to your liking</small>
-          <h2>Agenda</h2>
+      <div class="section-content-wrapper">
+        <div class="sessions-container">
+          <div class="sessionize-loader" data-sessionize-load-url="https://sessionize.com/api/v2/mkv9lwxo/view/Grid?under=True"><div class="sz-spinner"></div></div>
+        </div>
       </div>
-      <div class="section-description-wrapper">
-        <script type="text/javascript" src="https://sessionize.com/api/v2/mkv9lwxo/view/grid" defer async></script>
       </div>
     </div>
 
@@ -58,32 +58,37 @@ import footerCommon from '~/components/common/footer.vue'
 import axios from 'axios'
 
 export default {
-    components: {
-        headerSection,
-        // 'no-ssr': NoSSR,
-        footerCommon
-    },
-    data () {
-        return {
-            sessions: []
-        }
-    },
-    mounted() {
-        axios.get("https://sessionize.com/api/v2/m1l86vhf/view/grid")
-        .then( response => { this.sessions = response.data })
-        .catch( error => { console.log(error); })
-    },
-    computed: {
-      hasSessions () {
-        return false
-        // if (this.sessions && this.sessions.length) {
-        //     return true
-        // }
+  head: {
+    script: [
+      { src: '/sessionize.js', type: 'text/javascript' }
+    ]
+  },
+  components: {
+      headerSection,
+      // 'no-ssr': NoSSR,
+      footerCommon
+  },
+  data () {
+      return {
+          sessions: [],
       }
-    },
-    methods: {
-
+  },
+  mounted() {
+      axios.get("https://sessionize.com/api/v2/m1l86vhf/view/grid")
+        .then( response => { this.sessions = response.data })
+        .catch( error => { console.log(error); });
+  },
+  computed: {
+    hasSessions () {
+      return false
+      // if (this.sessions && this.sessions.length) {
+      //     return true
+      // }
     }
+  },
+  methods: {
+
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -299,4 +304,5 @@ export default {
       }
     }
   }
+  .sz-spinner { width: 40px; height: 40px; margin: 100px auto; background-color: #1ab394; border-radius: 100%;   -webkit-animation: sz-scaleout 1.0s infinite ease-in-out; animation: sz-scaleout 1.0s infinite ease-in-out; } @-webkit-keyframes sz-scaleout {0% { -webkit-transform: scale(0) }100% { -webkit-transform: scale(1.0); opacity: 0; } } @keyframes sz-scaleout { 0% { -webkit-transform: scale(0); transform: scale(0); } 100% { -webkit-transform: scale(1.0);  transform: scale(1.0); opacity: 0; } }
 </style>
