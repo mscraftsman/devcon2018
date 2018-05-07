@@ -45,7 +45,7 @@ export default {
   },
   mounted() {
     axios.get("https://sessionize.com/api/v2/m1l86vhf/view/speakers")
-      .then( response => {this.speakers = response.data})
+      .then( response => { this.speakers = response.data })
       .catch( error => { console.log(error); })
   },
   computed: {

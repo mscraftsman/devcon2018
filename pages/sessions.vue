@@ -10,15 +10,54 @@
         </div>
       </div>
     </div>
+
+    <div class="full-section-container" id="sessions" v-if="hasSessions">
+      <div class="sessiondays-wrapper" v-for="(day, index) in sessions" :key="index">
+          <div class="section-title-wrapper">
+              <small>{{day.date | moment("Do MMMM YYYY")}}</small>
+              <h2>{{day.date | moment("dddd")}}</h2>
+          </div>
+          <div class="section-content-wrapper">
+              <div class="session-table-container heading">
+                  <div class="session-table-row-wrapper">
+                  <div class="session-table-cell time">Time</div>
+                  <div class="session-table-cell educator-1">Educator 1</div>
+                  <div class="session-table-cell educator-2">Educator 2</div>
+                  <div class="session-table-cell accelerator">Accelerator</div>
+                  <div class="session-table-cell flying">Flying Dodo</div>
+                  </div>
+              </div>
+          </div>
+          <div class="section-description-wrapper">
+              <div class="sessions-container">
+                  <div class="session-wrapper" v-for="(session, index) in day" :key="index">
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="full-section-container" v-if="!hasSessions">
+      <div class="section-title-wrapper">
+          <small>Plan your attendance to your liking</small>
+          <h2>Agenda</h2>
+      </div>
+      <div class="section-description-wrapper">
+        <script type="text/javascript" src="https://sessionize.com/api/v2/mkv9lwxo/view/grid" defer async></script>
+      </div>
+    </div>
+
     <footer-common></footer-common>
   </div>
 </template>
 <script>
-    import headerSection from '~/components/common/header.vue'
-    import footerCommon from '~/components/common/footer.vue'
-    // import NoSSR from 'vue-no-ssr'
+import headerSection from '~/components/common/header.vue'
+import footerCommon from '~/components/common/footer.vue'
+// import NoSSR from 'vue-no-ssr'
 
-    export default {
+import axios from 'axios'
+
+export default {
     components: {
         headerSection,
         // 'no-ssr': NoSSR,
@@ -26,19 +65,26 @@
     },
     data () {
         return {
-
+            sessions: []
         }
+    },
+    mounted() {
+        axios.get("https://sessionize.com/api/v2/m1l86vhf/view/grid")
+        .then( response => { this.sessions = response.data })
+        .catch( error => { console.log(error); })
+    },
+    computed: {
+      hasSessions () {
+        return false
+        // if (this.sessions && this.sessions.length) {
+        //     return true
+        // }
+      }
     },
     methods: {
 
-    },
-    computed: {
-
-    },
-    mounted () {
-
     }
-    }
+}
 </script>
 <style lang="scss" scoped>
   $tablet: 1024px;
