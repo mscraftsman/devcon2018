@@ -15,13 +15,15 @@
     },
     {
       "name": "Jochen Kirstätter",
-      "email": "joki@ios.mu",
+      "email": "joki@mscc.mu",
       "url": "https://jochen.kirstaetter.name/"
     }
   ],
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "dev-debug2": "node --inspect node_modules/.bin/nuxt.cmd",
+    "dev-debug": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -29,6 +31,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
@@ -39,6 +42,8 @@
     "eslint-plugin-vue": "^4.0.0",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
-    "vue-no-ssr": "^0.2.2"
+    "vue-masonry-css": "^1.0.1",
+    "vue-no-ssr": "^0.2.2",
+    "vue-scrollto": "^2.8.0"
   }
 }

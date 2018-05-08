@@ -3,9 +3,14 @@
     <div class="logo-container">
       <div class="logo-wrapper">
         <!-- <img src="~/assets/images/logo.svg" alt="MSCC Logo" class="logo-svg"> -->
-        <h1 class="title">Developers Conference</h1>
-        <div class="year-wrapper">
-          <span>2018</span>
+        <div class="text-wrapper">
+          <h1 class="title">Developers Conference</h1>
+          <div class="year-wrapper">
+            <span>2018</span>
+          </div>
+        </div>
+        <div class="date-wrapper">
+          17 - 19 May
         </div>
       </div>
       <div class="description-wrapper">
@@ -13,27 +18,27 @@
       </div>
       <div class="timer-wrapper">
         <div class="timer">
-          <no-ssr>
-            <Countdown deadline="May 17, 2018"></Countdown>
-          </no-ssr>
+          <Countdown deadline="May 17, 2018"></Countdown>
         </div>
         <div class="register">
-          <nuxt-link to="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">Register</nuxt-link>
+          <a target="_blank" href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">Register</a>
         </div>
       </div>
 
       <div class="footer-text-wrapper">
-        <h3>17 - 19 May — Voila Hotel & Flying Dodo, Bagatelle</h3>
+        <h3>Voila Hotel &amp; Flying Dodo, Bagatelle</h3>
       </div>
     </div>
   </section>
 </template>
 <script>
   import Countdown from '~/components/Countdown.vue'
+  import NoSSR from 'vue-no-ssr'
 
   export default {
     components: {
-      Countdown
+      Countdown,
+      'no-ssr': NoSSR
     }
   }
 </script>
@@ -84,41 +89,57 @@
         display: flex;
         align-items: center;
         margin-bottom: calc(var(--gutter) * 2);
+        flex-wrap: wrap;
 
-        .logo-svg {
-          height: 40px;
-          margin-right: calc(var(--gutter) / 1);
-        }
-
-        .title {
+        .date-wrapper {
+          width: 100%;
           font-family: var(--font-shentox);
           text-transform: uppercase;
           color: var(--color-white);
-          font-size: 40px;
-          line-height: 60px;
+          font-size: 35px;
+          line-height: 50px;
           font-weight: 500;
-          margin: 0;
           text-shadow: 0 10px 50px rgba(0, 0, 0, 0.05);
-          margin-right: calc(var(--gutter) / 1);
         }
 
-        .year-wrapper {
-          display: inline-flex;
+        .text-wrapper {
+          width: 100%;
+          text-align: left;
+          align-self: end;
+          display: flex;
           align-items: center;
-          justify-content: center;
-          font-family: var(--font-shentox);
-          text-transform: uppercase;
-          color: var(--color-white);
-          font-size: 50px;
-          padding: calc(var(--gutter) / 1.5);
-          height: 70px;
-          font-weight: 700;
-          background: linear-gradient(135deg, rgba(49,232,183, 1) 0%, rgba(40,71,217, 1) 100%);
-          border-radius: 5px;
-          box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+          flex-wrap: wrap;
 
-          span {
-            height: 50px;
+          .title {
+            font-family: var(--font-shentox);
+            text-transform: uppercase;
+            color: var(--color-white);
+            font-size: 40px;
+            line-height: 60px;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0 10px 50px rgba(0, 0, 0, 0.05);
+            margin-right: calc(var(--gutter) / 1);
+          }
+
+          .year-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-shentox);
+            text-transform: uppercase;
+            color: var(--color-white);
+            font-size: 50px;
+            padding: calc(var(--gutter) / 1.5);
+            height: 70px;
+            font-weight: 700;
+            background: linear-gradient(135deg, rgba(49,232,183, 1) 0%, rgba(40,71,217, 1) 100%);
+            border-radius: 5px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+
+            span {
+              height: 50px;
+            }
           }
         }
       }
@@ -192,15 +213,22 @@
     .main {
       .logo-container {
         .logo-wrapper {
-          .title {
+
+          .date-wrapper {
             font-size: 30px;
           }
-          .year-wrapper {
-            font-size: 40px;
-            height: 60px;
 
-            span {
-              height: 40px;
+          .text-wrapper {
+            .title {
+              font-size: 30px;
+            }
+            .year-wrapper {
+              font-size: 40px;
+              height: 60px;
+
+              span {
+                height: 40px;
+              }
             }
           }
         }
@@ -217,6 +245,14 @@
       .logo-container {
         .logo-wrapper {
           justify-content: center;
+
+          .date-wrapper {
+            text-align: center;
+          }
+
+          .text-wrapper {
+            justify-content: center;
+          }
         }
         .description-wrapper {
           font-size: 80px;
@@ -283,19 +319,30 @@
 
         .logo-wrapper {
           flex-direction: column;
+          margin-bottom: calc(var(--gutter) / 2);
 
-          .title {
+          .date-wrapper {
             font-size: 25px;
-            line-height: 50px;
-            margin-right: 0;
+            line-height: 40px;
           }
 
-          .year-wrapper {
-            font-size: 30px;
-            height: 50px;
+          .text-wrapper {
+            flex-direction: column;
+            margin-bottom: var(--gutter);
 
-            span {
-              height: 30px;
+            .title {
+              font-size: 25px;
+              line-height: 50px;
+              margin-right: 0;
+            }
+
+            .year-wrapper {
+              font-size: 30px;
+              height: 50px;
+
+              span {
+                height: 30px;
+              }
             }
           }
         }
@@ -315,6 +362,35 @@
         .footer-text-wrapper {
           h3 {
             font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    .main {
+      .logo-container {
+
+        .logo-wrapper {
+          margin-bottom: 20px;
+
+          .date-wrapper {
+            line-height: 25px;
+          }
+        }
+
+        .description-wrapper {
+          font-size: 30px;
+          margin-bottom: 10px;
+        }
+
+        .timer-wrapper {
+          .register {
+            margin-bottom: var(--gutter);
+            a {
+              height: 50px;
+            }
           }
         }
       }
