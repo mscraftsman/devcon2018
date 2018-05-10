@@ -77,7 +77,7 @@
           },
           {
             name: 'Press Material',
-            url: '/press'
+            url: '/press/'
           },
           {
             name: 'Become a Sponsor',
@@ -95,7 +95,7 @@
         sitemap: [
           {
             name: 'Sessions',
-            url: '/sessions'
+            url: '/sessions/'
           },
           {
             name: 'Sponsors',
@@ -107,15 +107,15 @@
           },
           {
             name: 'Jobs',
-            url: '/jobs'
+            url: '/jobs/'
           },
           {
             name: 'Extras',
-            url: '/extras'
+            url: '/extras/'
           },
           {
             name: 'Venues',
-            url: '/venues'
+            url: '/venues/'
           }
         ]
       }

@@ -32,7 +32,7 @@ export default {
       menuItems: [
         {
           name: 'Sessions',
-          url: '/sessions'
+          url: '/sessions/'
         },
         {
           name: 'Speakers',
@@ -41,7 +41,7 @@ export default {
         },
         {
           name: 'Extras',
-          url: '/extras'
+          url: '/extras/'
         },
         {
           name: 'MCB InovApp',
