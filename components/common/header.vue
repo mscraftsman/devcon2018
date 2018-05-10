@@ -18,8 +18,11 @@
         <button type="button" @click="openMenu">Menu</button>
       </div>
       <div class="register-button">
-        <a target="_blank" href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">
+        <a target="_blank" href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/" v-if="allowRegistration">
           <span>Register</span>
+        </a>
+        <a href="#" v-if="!allowRegistration">
+          <span>See you, 2019</span>
         </a>
       </div>
     </header>
@@ -58,6 +61,13 @@ export default {
         }
       ],
       openState: null
+    }
+  },
+  computed: {
+    allowRegistration () {
+      var deadline = new Date(2018, 4, 11, 12, 0, 0);
+      var now = new Date();
+      return (now <= deadline)
     }
   },
   methods: {

@@ -21,7 +21,8 @@
           <Countdown deadline="May 17, 2018"></Countdown>
         </div>
         <div class="register">
-          <a target="_blank" href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/">Register</a>
+          <a target="_blank" href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/247729700/" v-if="allowRegistration">Register</a>
+          <a target="_blank" href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/" v-if="!allowRegistration">Join MSCC!</a>
         </div>
       </div>
 
@@ -39,6 +40,13 @@
     components: {
       Countdown,
       'no-ssr': NoSSR
+    },
+    computed: {
+      allowRegistration () {
+        var deadline = new Date(2018, 4, 11, 12, 0, 0);
+        var now = new Date();
+        return (now <= deadline)
+      }
     }
   }
 </script>
