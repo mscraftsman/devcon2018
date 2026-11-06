@@ -21,12 +21,12 @@
   ],
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
-    "dev-debug2": "node --inspect node_modules/.bin/nuxt.cmd",
-    "dev-debug": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider nuxt build",
-    "start": "nuxt start",
-    "generate": "NODE_OPTIONS=--openssl-legacy-provider nuxt generate",
+    "dev": "node --openssl-legacy-provider ./node_modules/nuxt/bin/nuxt.js",
+    "dev-debug2": "node --inspect ./node_modules/nuxt/bin/nuxt.js",
+    "dev-debug": "node --openssl-legacy-provider ./node_modules/nuxt/bin/nuxt.js",
+    "build": "node --openssl-legacy-provider ./node_modules/nuxt/bin/nuxt.js build",
+    "start": "node ./node_modules/nuxt/bin/nuxt.js start",
+    "generate": "node --openssl-legacy-provider ./node_modules/nuxt/bin/nuxt.js generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },

@@ -2,6 +2,7 @@
   <div class="full-section-container" id="gallery">
     <div class="section-description-wrapper">
       <div class="gallery-container">
+        <client-only>
           <masonry
             :cols="{default: 4, 1000: 3, 700: 2}"
             :gutter="5"
@@ -10,6 +11,7 @@
               <img :src="image(item)" alt="">
             </div>
           </masonry>
+        </client-only>
       </div>
     </div>
   </div>

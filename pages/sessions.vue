@@ -74,6 +74,9 @@ export default {
       }
   },
   mounted() {
+      if (typeof window !== 'undefined' && typeof window.sessionize_load === 'function') {
+          window.sessionize_load();
+      }
       axios.get("https://sessionize.com/api/v2/m1l86vhf/view/grid")
         .then( response => { this.sessions = response.data })
         .catch( error => { console.log(error); });
