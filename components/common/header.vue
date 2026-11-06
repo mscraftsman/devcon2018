@@ -75,6 +75,9 @@ export default {
       this.openState = (this.openState === null) ? 'opened' : null
     },
     scrollToElement (element, event) {
+      if (!element) {
+        return
+      }
       let name = this.$route.name
       let id = element.substring(1, element.length)
       if (name === 'index') {

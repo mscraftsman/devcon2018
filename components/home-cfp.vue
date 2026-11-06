@@ -53,6 +53,7 @@ export default {
       if (this.speakers && this.speakers.length) {
         return true
       }
+      return false
     }
   },
   methods: {

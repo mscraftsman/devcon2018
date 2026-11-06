@@ -9,11 +9,11 @@
   </div>
 </template>
 <script>
-  import NoSSR from 'vue-no-ssr'
+  // import NoSSR from 'vue-no-ssr'
 
   export default {
     components: {
-      'no-ssr': NoSSR
+      // 'no-ssr': NoSSR
     }
   }
 </script>

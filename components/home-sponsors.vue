@@ -76,6 +76,7 @@ export default {
       if (this.sponsors && this.sponsors.length) {
         return true
       }
+      return false
     },
     getSponsorsByPackage () {
       let packages = []

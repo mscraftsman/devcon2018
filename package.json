@@ -21,29 +21,42 @@
   ],
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
     "dev-debug2": "node --inspect node_modules/.bin/nuxt.cmd",
-    "dev-debug": "nuxt",
-    "build": "nuxt build",
+    "dev-debug": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "NODE_OPTIONS=--openssl-legacy-provider nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "nuxt": "^1.0.0"
+    "axios": "^1.13.2",
+    "lodash": "^4.17.21",
+    "nuxt": "^2.18.1"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
-    "vue-masonry-css": "^1.0.1",
-    "vue-no-ssr": "^0.2.2",
-    "vue-scrollto": "^2.8.0"
+    "@babel/eslint-parser": "^7.26.8",
+    "eslint": "^8.57.1",
+    "eslint-plugin-vue": "^9.33.0",
+    "sass": "^1.77.6",
+    "sass-loader": "^10.5.2",
+    "vue-masonry-css": "^1.0.3",
+    "vue-no-ssr": "^1.1.1",
+    "vue-scrollto": "^2.20.0",
+    "webpack": "^4.47.0"
+  },
+  "overrides": {
+    "braces": "^3.0.3",
+    "cookie": "^0.7.2",
+    "decode-uri-component": "^0.5.1",
+    "defu": "^6.1.7",
+    "devalue": "^6.0.3",
+    "elliptic": "^6.6.1",
+    "micromatch": "^4.0.8",
+    "postcss": "^8.5.32",
+    "serialize-javascript": "^7.1.4",
+    "tar": "^7.5.22",
+    "tmp": "^0.2.7"
   }
 }

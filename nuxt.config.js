@@ -22,7 +22,7 @@ module.exports = {
       { hid: 'og:site_name', property: 'og:site_name', content: 'Developers Conference 2018' },
       { hid: 'og:locale', property: 'og:locale', content: 'en_US' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@MSCraftsman' },
-      { hid: 'twitter:card', name: 'twitter:site', content: 'summary_large_image' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:title', name: 'twitter:title', content: 'Developers Conference 2018' },
       { hid: 'twitter:url', name: 'twitter:url', content: 'https://www.conference.mscc.mu' },
       { hid: 'twitter:image', name: 'twitter:image', content: '/images/og-image.jpg' },
@@ -75,8 +75,8 @@ module.exports = {
     { src: '~/plugins/masonry', ssr: false }
   ],
   // mode: 'spa',
+  telemetry: false,
   build: {
-    vendor: ['axios'],
     /*
     ** Run ESLint on save
     */

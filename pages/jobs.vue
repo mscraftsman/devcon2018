@@ -66,8 +66,6 @@
     },
     computed: {
         hasjobs () {
-          let active = []
-
           if (this.jobs && this.jobs.length) {
             let activeJobs = this.jobs.filter(job => {
               return job.gsx$approved.$t === "1";
@@ -77,6 +75,7 @@
               return true;
             }
           }
+          return false;
         }
     },
     methods: {
@@ -211,15 +210,6 @@
 
   .jobs-container .job-wrapper:last-child {
     margin-right: 0;
-  }
-
-  .jobs-container .job-wrapper:nth-child(undefinedn) {
-    margin-right: 0;
-    float: right;
-  }
-
-  .jobs-container .job-wrapper:nth-child(undefinedn + 1) {
-    clear: both;
   }
 
   .jobs-container .job-wrapper:before {

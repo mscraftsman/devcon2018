@@ -18,14 +18,14 @@
 <script>
   import headerSection from '~/components/common/header.vue'
   import extraMain from '~/components/extra-main.vue'
-  import extraAtlassian from '~/components/extra-atlassian.vue'
-  import extraDrupal from '~/components/extra-drupal.vue'
-  import extraGdg from '~/components/extra-gdg.vue'
-  import extraHackers from '~/components/extra-hackers.vue'
-  import extraLugm from '~/components/extra-lugm.vue'
-  import extraMaker from '~/components/extra-maker.vue'
-  import extraPhp from '~/components/extra-php.vue'
-  import extraSymfony from '~/components/extra-symfony.vue'
+  // import extraAtlassian from '~/components/extra-atlassian.vue'
+  // import extraDrupal from '~/components/extra-drupal.vue'
+  // import extraGdg from '~/components/extra-gdg.vue'
+  // import extraHackers from '~/components/extra-hackers.vue'
+  // import extraLugm from '~/components/extra-lugm.vue'
+  // import extraMaker from '~/components/extra-maker.vue'
+  // import extraPhp from '~/components/extra-php.vue'
+  // import extraSymfony from '~/components/extra-symfony.vue'
   import extraCommunity from '~/components/extra-community.vue'
   import sponsorship from '~/components/sponsorship.vue'
   import footerCommon from '~/components/common/footer.vue'
@@ -35,14 +35,14 @@
     components: {
       headerSection,
       extraMain,
-      extraAtlassian,
-      extraDrupal,
-      extraGdg,
-      extraHackers,
-      extraLugm,
-      extraMaker,
-      extraPhp,
-      extraSymfony,
+      // extraAtlassian,
+      // extraDrupal,
+      // extraGdg,
+      // extraHackers,
+      // extraLugm,
+      // extraMaker,
+      // extraPhp,
+      // extraSymfony,
       extraCommunity,
       sponsorship,
       // 'no-ssr': NoSSR,

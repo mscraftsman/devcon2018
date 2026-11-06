@@ -33,13 +33,13 @@
   </section>
 </template>
 <script>
-  import Countdown from '~/components/Countdown.vue'
-  import NoSSR from 'vue-no-ssr'
+  // import Countdown from '~/components/Countdown.vue'
+  // import NoSSR from 'vue-no-ssr'
 
   export default {
     components: {
-      Countdown,
-      'no-ssr': NoSSR
+      // Countdown,
+      // 'no-ssr': NoSSR
     },
     computed: {
       allowRegistration () {
