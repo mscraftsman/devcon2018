@@ -9,10 +9,11 @@
   Twitter: @MSCraftsman
   Location: Mauritius
 
-/* THANKS */
+/* THANKS (in alphabetical order) */
   Jochen Kirstätter - https://jochen.kirstaetter.name/
   Nirvan (Tejas) Pagooah - http://graphicstemple.io/ & http://nirvan.pagooah.com/
+  Sandeep Ramgolam - https://barfii.net/
 
 /* SITE */
   Standards: HTML5, CSS3, SCSS
-  Components: 
+  Components: Nuxt.js, CSS Grid

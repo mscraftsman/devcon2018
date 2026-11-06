@@ -1,0 +1,48 @@
+{
+    "short_name": "DevCon 2018",
+    "name": "Developers Conference 2018 - Mauritius",
+    "description": "Get latest updates about 3rd edition of Developers Conference in Mauritius",
+    "start_url": "./?utm_source=web_app_manifest",
+    "display": "standalone",
+    "orientation": "landscape-primary",
+    "background_color": "#363636",
+    "theme_color": "#ee0979",
+    "icons": [
+        {
+            "src": "assets/images/favicon/mscc-touch-icon-36x36.png",
+            "sizes": "36x36",
+            "type": "image/png",
+            "density": "0.75"
+        },
+        {
+            "src": "assets/images/favicon/mscc-touch-icon-48x48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "density": "1.0"
+        },
+        {
+            "src": "assets/images/favicon/mscc-touch-icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "density": "1.5"
+        },
+        {
+            "src": "assets/images/favicon/mscc-touch-icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "density": "2.0"
+        },
+        {
+            "src": "assets/images/favicon/mscc-touch-icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "density": "3.0"
+        },
+        {
+            "src": "assets/images/favicon/mscc-touch-icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "density": "4.0"
+        }
+    ]
+}

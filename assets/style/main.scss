@@ -1,0 +1,13 @@
+@import './vendor/normalize.css';
+@import './fonts.scss';
+
+:root, html {
+  --color-green: #31e8b7;
+  --color-blue: #2847d9;
+  --color-white: #fff;
+  --color-black: #333;
+  --font-glacial: "GlacialIndifference";
+  --font-shentox: "Shentox";
+  --font-shentox-size-default: 18px;
+  --gutter: 20px;
+}
